@@ -1,0 +1,40 @@
+server:
+  port: 8083
+  servlet:
+    context-path: /auth
+
+spring:
+  application:
+    name: auth
+  jpa:
+    database-platform=org:
+      hibernate:
+        dialect:
+          MySQL8Dialect:
+    show-sql: true
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+  jmx:
+    enabled: false
+  datasource:
+    url: jdbc:mysql://localhost:3306/auth?createDatabaseIfNotExist=true&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&useTimezone=true&serverTimezone=America/Sao_Paulo
+    username: root
+    password: root
+
+security:
+  jwt:
+    token:
+      secret-key: chave_microservicos
+      expire-length: 360000
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/registry/eureka
