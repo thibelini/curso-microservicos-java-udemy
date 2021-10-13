@@ -14,7 +14,7 @@ spring:
     show-sql: true
     open-in-view: false
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
@@ -25,6 +25,9 @@ spring:
     url: jdbc:mysql://localhost:3306/auth?createDatabaseIfNotExist=true&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&useTimezone=true&serverTimezone=America/Sao_Paulo
     username: root
     password: root
+  sql:
+    init:
+      mode: always
 
 security:
   jwt:

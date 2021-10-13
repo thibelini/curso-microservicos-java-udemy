@@ -11,6 +11,6 @@ public class Criptografia {
     }
 
     public static void main(String[] args) {
-        System.out.println(cripto("belinha"));
+        System.out.println(cripto("admin"));
     }
 }
